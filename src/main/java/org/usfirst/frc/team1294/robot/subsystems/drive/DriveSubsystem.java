@@ -62,13 +62,11 @@ public class DriveSubsystem extends Subsystem {
         robotDrive.arcadeDrive(0, 0);
     }
 
-    public static final boolean BRAKE = true;
-    public static final boolean COAST = false;
-
     /**
      * Method to set the brake mode of the drive CANTalons.
      *
-     * @param brakeMode Should be either <code>DriveSubsystem.BRAKE</code> or <code>DriveSubsystem.COAST</code>
+     * @param brakeMode Should be either <code>RobotMap.BRAKE</code> or <code>RobotMap.COAST</code>
+     * @see org.usfirst.frc.team1294.robot.RobotMap
      */
     public void setBrakeMode(boolean brakeMode){
         driveLeft.enableBrakeMode(brakeMode);

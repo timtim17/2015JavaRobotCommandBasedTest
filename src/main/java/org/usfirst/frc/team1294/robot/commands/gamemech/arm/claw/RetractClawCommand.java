@@ -1,31 +1,29 @@
-package org.usfirst.frc.team1294.robot.commands.drive;
+package org.usfirst.frc.team1294.robot.commands.gamemech.arm.claw;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team1294.robot.Robot;
 
 /**
- * Command to drive tank drive with two joysticks.
- *
  * @author Austin
  * @see edu.wpi.first.wpilibj.command.Command
- * @since 3/10/2015
+ * @since 3/17/2015
  */
-public class TankDriveCommand extends Command {
-    public TankDriveCommand() {
-        requires(Robot.driveSubsystem);
+public class RetractClawCommand extends Command {
+    public RetractClawCommand() {
+        requires(Robot.clawSubsystem);
     }
 
     // Called just before this Command runs the first time
-    protected void initialize() {}
+    protected void initialize() {
+        Robot.clawSubsystem.setExtendSolenoid(false);
+    }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-        Robot.driveSubsystem.tankDrive(Robot.oi.getDriveLeft(), Robot.oi.getDriveRight());
-    }
+    protected void execute() {}
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

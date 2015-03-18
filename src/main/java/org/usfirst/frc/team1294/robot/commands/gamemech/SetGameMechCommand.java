@@ -1,18 +1,20 @@
-package org.usfirst.frc.team1294.robot.commands.drive;
+package org.usfirst.frc.team1294.robot.commands.gamemech;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team1294.robot.Robot;
 
 /**
- * Command to drive tank drive with two joysticks.
- *
  * @author Austin
  * @see edu.wpi.first.wpilibj.command.Command
- * @since 3/10/2015
+ * @since 3/17/2015
  */
-public class TankDriveCommand extends Command {
-    public TankDriveCommand() {
-        requires(Robot.driveSubsystem);
+public class SetGameMechCommand extends Command {
+    Robot.Mech mech;
+
+    private boolean isDone = false;
+
+    public SetGameMechCommand(Robot.Mech mech) {
+        this.mech = mech;
     }
 
     // Called just before this Command runs the first time
@@ -20,12 +22,13 @@ public class TankDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.driveSubsystem.tankDrive(Robot.oi.getDriveLeft(), Robot.oi.getDriveRight());
+        Robot.currentMech = this.mech;
+        isDone = true;
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isDone;
     }
 
     // Called once after isFinished returns true

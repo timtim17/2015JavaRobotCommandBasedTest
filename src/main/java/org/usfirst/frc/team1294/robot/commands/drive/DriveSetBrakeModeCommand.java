@@ -9,16 +9,14 @@ import org.usfirst.frc.team1294.robot.Robot;
  * @since 3/11/2015
  */
 public class DriveSetBrakeModeCommand extends Command {
-    private boolean isDone;
-
     private boolean brakeMode;
 
     /**
-     * @param brakeMode Brake mode for drive CANTalons. Should be either <code>DriveSubsystem.BRAKE</code> or <code>DriveSubsystem.COAST</code>
+     * @param brakeMode Brake mode for drive CANTalons. Should be either <code>RobotMap.BRAKE</code> or <code>RobotMap.COAST</code>
+     * @see org.usfirst.frc.team1294.robot.RobotMap
      */
     public DriveSetBrakeModeCommand(boolean brakeMode) {
         requires(Robot.driveSubsystem);
-        isDone = false;
         this.brakeMode = brakeMode;
     }
 
@@ -28,14 +26,11 @@ public class DriveSetBrakeModeCommand extends Command {
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-        Robot.driveSubsystem.setBrakeMode(this.brakeMode);
-        isDone = true;
-    }
+    protected void execute() {}
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isDone;
+        return true;
     }
 
     // Called once after isFinished returns true

@@ -1,6 +1,9 @@
 package org.usfirst.frc.team1294.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc.team1294.robot.commands.gamemech.SetGameMechCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -34,7 +37,30 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
 
-    public final Joystick leftStick = new Joystick(0),
-                                            rightStick = new Joystick(1);
+    private static Joystick leftStick = new Joystick(0),
+                                               rightStick = new Joystick(1),
+                                               armStick = new Joystick(2);
+
+    private static Button left2CANButton = new JoystickButton(armStick, 3),
+                                           armButton = new JoystickButton(armStick, 4),
+                                           right2CANButton = new JoystickButton(armStick, 5);
+
+    public OI() {
+        left2CANButton.whenPressed(new SetGameMechCommand(Robot.Mech.LEFT2CAN));
+        armButton.whenPressed(new SetGameMechCommand(Robot.Mech.ARM));
+        right2CANButton.whenPressed(new SetGameMechCommand(Robot.Mech.RIGHT2CAN));
+    }
+
+    public double getDriveLeft(){
+        return leftStick.getY();
+    }
+
+    public double getDriveRight(){
+        return rightStick.getY();
+    }
+
+    public double getMechY(){
+        return armStick.getY() * RobotMap.MECH_SPEED_MULTIPLIER;
+    }
 }
 
