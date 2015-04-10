@@ -1,7 +1,7 @@
 package org.usfirst.frc.team1294.robot.commands.gamemech.arm;
 
 import org.usfirst.frc.team1294.robot.Robot;
-import org.usfirst.frc.team1294.robot.RobotMap.MECH;
+import org.usfirst.frc.team1294.robot.RobotMap.Mechs;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -21,7 +21,7 @@ public class ArmLeftJoystickCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.selectedMech == MECH.ARM){
+    	if(Robot.selectedMech == Mechs.ARM){
     		Robot.ARM_LEFT_SUBSYSTEM.move(Robot.oi.getArmY());
     	}else{
     		Robot.ARM_LEFT_SUBSYSTEM.stop();

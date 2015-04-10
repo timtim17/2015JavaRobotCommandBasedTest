@@ -1,6 +1,6 @@
 package org.usfirst.frc.team1294.robot;
 
-import org.usfirst.frc.team1294.robot.RobotMap.MECH;
+import org.usfirst.frc.team1294.robot.RobotMap.Mechs;
 import org.usfirst.frc.team1294.robot.commands.gamemech.SetMechCommand;
 import org.usfirst.frc.team1294.robot.commands.gamemech.arm.claw.CloseClawCommand;
 import org.usfirst.frc.team1294.robot.commands.gamemech.arm.claw.ExtendClawCommand;
@@ -60,9 +60,9 @@ public class OI {
 		closeClawButton.whenPressed(new CloseClawCommand());
 		extendClawButton.whenPressed(new ExtendClawCommand());
 		retractClawButton.whenPressed(new RetractClawCommand());
-		armButton.whenPressed(new SetMechCommand(MECH.ARM));
-		left2CanButton.whenPressed(new SetMechCommand(MECH.LEFT2CAN));
-		right2CanButton.whenPressed(new SetMechCommand(MECH.RIGHT2CAN));
+		armButton.whenPressed(new SetMechCommand(Mechs.ARM));
+		left2CanButton.whenPressed(new SetMechCommand(Mechs.LEFT2CAN));
+		right2CanButton.whenPressed(new SetMechCommand(Mechs.RIGHT2CAN));
 	}
 	
 	public double getDriveLeftY(){

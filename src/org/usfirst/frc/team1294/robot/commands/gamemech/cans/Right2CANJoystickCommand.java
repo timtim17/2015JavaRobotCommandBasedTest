@@ -1,7 +1,7 @@
 package org.usfirst.frc.team1294.robot.commands.gamemech.cans;
 
 import org.usfirst.frc.team1294.robot.Robot;
-import org.usfirst.frc.team1294.robot.RobotMap.MECH;
+import org.usfirst.frc.team1294.robot.RobotMap.Mechs;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -21,7 +21,7 @@ public class Right2CANJoystickCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.selectedMech == MECH.RIGHT2CAN){
+    	if(Robot.selectedMech == Mechs.RIGHT2CAN){
     		Robot.RIGHT2CAN_SUBSYSTEM.move(Robot.oi.getArmY());
     	}else{
     		Robot.RIGHT2CAN_SUBSYSTEM.stop();

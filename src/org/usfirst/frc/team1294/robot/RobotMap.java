@@ -59,7 +59,7 @@ public class RobotMap {
 							   AUTO_2CANS_SPEED = 0,
 							   AUTO_2CANS_TIME = 0;
 	
-	public static enum MECH {ARM, LEFT2CAN, RIGHT2CAN}
+	public static enum Mechs {ARM, LEFT2CAN, RIGHT2CAN}
 	
 	public static enum BrakeMode{
 		BRAKE(true), COAST(false);

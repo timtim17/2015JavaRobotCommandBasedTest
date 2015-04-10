@@ -1,7 +1,7 @@
 package org.usfirst.frc.team1294.robot.commands.gamemech;
 
 import org.usfirst.frc.team1294.robot.Robot;
-import org.usfirst.frc.team1294.robot.RobotMap.MECH;
+import org.usfirst.frc.team1294.robot.RobotMap.Mechs;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class SetMechCommand extends Command {
 
-    public SetMechCommand(MECH mech) {
+    public SetMechCommand(Mechs mech) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	Robot.selectedMech = mech;

@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team1294.robot.RobotMap.BrakeMode;
-import org.usfirst.frc.team1294.robot.RobotMap.MECH;
+import org.usfirst.frc.team1294.robot.RobotMap.Mechs;
 import org.usfirst.frc.team1294.robot.commands.StartCompressorCommand;
 import org.usfirst.frc.team1294.robot.commands.auto.AutoCommand;
 import org.usfirst.frc.team1294.robot.commands.drive.SetDriveBrakeModeCommand;
@@ -46,7 +46,7 @@ public class Robot extends IterativeRobot {
 
     private static Command autonomousCommand;
     
-    public static MECH selectedMech = MECH.ARM;
+    public static Mechs selectedMech = Mechs.ARM;
 
     /**
      * This function is run when the robot is first started up and should be
