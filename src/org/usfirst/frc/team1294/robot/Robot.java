@@ -33,6 +33,8 @@ import org.usfirst.frc.team1294.robot.subsystems.Right2CANSubsystem;
  * directory.
  */
 public class Robot extends IterativeRobot {
+	public static final String VERSION_STRING = "04-10-2015";
+	
 	public static final DriveSubsystem DRIVE_SUBSYSTEM = new DriveSubsystem();
 	public static final ArmLeftSubsystem ARM_LEFT_SUBSYSTEM = new ArmLeftSubsystem();
 	public static final ArmRightSubsystem ARM_RIGHT_SUBSYSTEM = new ArmRightSubsystem();
@@ -58,6 +60,8 @@ public class Robot extends IterativeRobot {
         // instantiate the command used for the autonomous period
         autonomousCommand = new AutoCommand();
         new StartCompressorCommand().start();
+        
+        SmartDashboard.putString("Version", VERSION_STRING);
     }
     
     /**
@@ -132,5 +136,7 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putData(COMPRESSOR_SUBSYSTEM);
     	SmartDashboard.putData(GYRO_SUBSYSTEM);
     	SmartDashboard.putNumber("Gyro Angle", GYRO_SUBSYSTEM.getAngle());
+    	SmartDashboard.putNumber("Left Sring Pot", ARM_RIGHT_SUBSYSTEM.getLeftPot());
+    	SmartDashboard.putNumber("Right Sring Pot", ARM_RIGHT_SUBSYSTEM.getRightPot());
     }
 }

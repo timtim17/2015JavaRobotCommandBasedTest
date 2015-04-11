@@ -30,6 +30,10 @@ public class ArmRightSubsystem extends PIDSubsystem {
     	return leftPot.get();
     }
     
+    public double getRightPot(){
+    	return rightPot.get();
+    }
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
