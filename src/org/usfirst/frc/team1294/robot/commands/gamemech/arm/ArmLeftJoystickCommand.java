@@ -22,9 +22,17 @@ public class ArmLeftJoystickCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if(Robot.selectedMech == Mechs.ARM){
-    		Robot.ARM_LEFT_SUBSYSTEM.move(Robot.oi.getArmY());
+    		Robot.ARM_LEFT_SUBSYSTEM.move(stringPotSlow(Robot.oi.getArmY()));
     	}else{
     		Robot.ARM_LEFT_SUBSYSTEM.stop();
+    	}
+    }
+    
+    private double stringPotSlow(double joystick){
+    	if(joystick < 0){
+    		return joystick * 0.75;
+    	}else{
+    		return joystick;
     	}
     }
 

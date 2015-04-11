@@ -59,6 +59,10 @@ public class RobotMap {
 							   AUTO_2CANS_SPEED = 0,
 							   AUTO_2CANS_TIME = 0;
 	
+	public static final double DRIVE_EXPO_MIN = 0.2,
+							   DRIVE_EXPO_DEADZONE = 0.03,
+							   DRIVE_EXPO_EXPO = 1.75;
+	
 	public static enum Mechs {ARM, LEFT2CAN, RIGHT2CAN}
 	
 	public static enum BrakeMode{

@@ -2,7 +2,7 @@ package org.usfirst.frc.team1294.robot.subsystems;
 
 import org.usfirst.frc.team1294.robot.RobotMap;
 import org.usfirst.frc.team1294.robot.RobotMap.BrakeMode;
-import org.usfirst.frc.team1294.robot.commands.drive.TankDriveCommand;
+import org.usfirst.frc.team1294.robot.commands.drive.ExpoDriveCommand;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Encoder;
@@ -56,7 +56,7 @@ public class DriveSubsystem extends Subsystem {
     }
 
     public void initDefaultCommand() {
-        setDefaultCommand(new TankDriveCommand());
+        setDefaultCommand(new ExpoDriveCommand());
     }
 }
 
