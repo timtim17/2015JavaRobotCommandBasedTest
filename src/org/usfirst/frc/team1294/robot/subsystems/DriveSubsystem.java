@@ -26,6 +26,7 @@ public class DriveSubsystem extends Subsystem {
     	leftDriveEncoder.setSamplesToAverage(RobotMap.ENCODER_DRIVE_LEFT_NUMBER_SAMPLES_TO_AVERAGE);
     	
     	robotDrive.setInvertedMotor(MotorType.kFrontLeft, true);
+    	robotDrive.setSafetyEnabled(false);
     }
     
     // Put methods for controlling this subsystem
