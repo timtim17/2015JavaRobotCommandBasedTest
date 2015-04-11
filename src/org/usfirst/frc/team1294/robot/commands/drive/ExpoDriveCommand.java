@@ -34,7 +34,7 @@ public class ExpoDriveCommand extends Command {
     		return 0;
     	}else if(deadzone <= input && input <= 1){
     		return (Math.pow(input, 3) * (expo - 1) + input) / expo + min * (1 - input);
-    	}else if(01 <= input && input <= -deadzone){
+    	}else if(-1 <= input && input <= -deadzone){
     		return (Math.pow(input, 3) * (expo - 1) + input) / expo - min * (1 + input);
     	}else{
     		return 1;
